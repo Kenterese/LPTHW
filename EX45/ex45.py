@@ -2,6 +2,7 @@
 # Basic imports for the game
 from sys import exit
 from random import randint
+import start
 
 # Setting Scenes, the parent class.
 class Scene(object):
@@ -237,21 +238,9 @@ class Map(object):
 	def opening_scene(self):
 		return self.next_scene(self.start_scene)
 
-class Start(object):
-
-	def __init__(self, scene_map):
-		self.scene_map = scene_map
-
-	def play(self):
-		current_scene = self.scene_map.opening_scene()
-		last_scene = self.scene_map.next_scene('Fail')
-
-		while current_scene != last_scene:
-			next_scene_name = current_scene.enter()
-			current_scene = self.scene_map.next_scene(next_scene_name)
 
 		
 
 a_map = Map('Mom')
-a_game = Start(a_map)
+a_game = start.Start(a_map)
 a_game.play()
