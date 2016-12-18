@@ -1,18 +1,24 @@
-from PyQt5.QtWidgets import QApplication, QtWidget
+"""
+gui01.py
+The most basic Qt Program.
+Opens an empty Window and moves it to the upper left corner of the screen.
+"""
+
+from PyQt5.QtWidgets import QApplication, QWidget
 import sys
 
-class MyWindow(QtWidget):
-	def __init__(self):
-		super (MyWindow, self).__init__()
-		self.initGUI()
+class MyWindow(QWidget):
+    def _init_(self):
+        super(MyWindow, self)._init_()
+        self.initGUI()
 
-	def initGUI(self):
-		self.setWindowTitle('A First Window')
-resize(250, 150)
+    def initGUI(self):
+        self.setWindowTitle('A First Window')
+        self.resize(250,150)
 
 if __name__ == "__main__":
-	app = QApplication(sys.argv) #create the application
-	MyWindow = MyWindow() #create the instance of yout window
-	mywindow.move(0,0)
-	mywindow.show() # tell Qt to make your window viisble 
-	sys.exit(app.exec_())  # startt the event loop
+    app = QApplication(sys.argv) # create the application
+    mywindow = MyWindow() # create an instance of your window
+    mywindow.move(0, 0)
+    mywindow.show() # tell Qt to move your window visible
+    sys.exit(app.exec_())# start the event input
